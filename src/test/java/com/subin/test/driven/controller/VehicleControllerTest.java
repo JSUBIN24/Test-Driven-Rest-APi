@@ -1,25 +1,20 @@
 package com.subin.test.driven.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.subin.test.driven.model.dto.VehicleDTO;
-import com.subin.test.driven.service.InventoryService;
-import com.subin.test.driven.service.SearchService;
+import com.subin.test.driven.service.implementation.InventoryService;
+import com.subin.test.driven.service.implementation.SearchService;
 import com.subin.test.driven.util.ApiResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
 
 import java.text.MessageFormat;
 import java.util.Arrays;
@@ -72,6 +67,17 @@ class VehicleControllerTest {
                 .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isCreated()
                 );
+    }
+
+    @Test
+    void testAddVehicles_withInvalidFields_ShouldReturnBadRequest() throws Exception{
+        VehicleDTO invalidDto = new VehicleDTO(null,null,1990,-55000,-15);
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/vehicles/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(invalidDto))
+        ).andExpect(status().isBadRequest());
+
     }
 
     @Test

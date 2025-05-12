@@ -1,7 +1,7 @@
 package com.subin.test.driven.controller;
 
 import com.subin.test.driven.model.dto.StudentDTO;
-import com.subin.test.driven.service.StudentService;
+import com.subin.test.driven.service.implementation.StudentService;
 import com.subin.test.driven.util.ApiResponse;
 import com.subin.test.driven.util.ResponseEntityUtil;
 import jakarta.validation.Valid;

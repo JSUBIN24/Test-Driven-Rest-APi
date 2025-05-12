@@ -1,6 +1,5 @@
-package com.subin.test.driven.service;
+package com.subin.test.driven.service.implementation;
 
-import com.subin.test.driven.controller.StudentController;
 import com.subin.test.driven.model.entity.StudentEntity;
 import com.subin.test.driven.model.dto.StudentDTO;
 import com.subin.test.driven.repository.StudentRepository;

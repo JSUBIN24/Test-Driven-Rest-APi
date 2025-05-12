@@ -1,16 +1,11 @@
-package com.subin.test.driven.service;
+package com.subin.test.driven.service.implementation;
 
 import com.subin.test.driven.model.dto.VehicleDTO;
 import com.subin.test.driven.util.ApiResponse;
 import com.subin.test.driven.util.ResponseEntityUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.text.MessageFormat;
 import java.util.Comparator;
 import java.util.List;

@@ -1,11 +1,10 @@
-package com.subin.test.driven.service;
+package com.subin.test.driven.service.implementation;
 
 import com.subin.test.driven.model.dto.VehicleDTO;
 import com.subin.test.driven.util.ApiResponse;
 import com.subin.test.driven.util.ResponseEntityUtil;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -13,13 +12,13 @@ import java.util.*;
 @Service
 @Slf4j
 public class InventoryService {
-    private final List<VehicleDTO> vehicleInventory = Arrays.asList(
+    private final List<VehicleDTO> vehicleInventory = new ArrayList<>(List.of(               //using Arrays.asList will make immutable so while adding it we will get exception
             new VehicleDTO("BMW", "X1", 2020, 35000, 10),
             new VehicleDTO("BMW", "X2", 2021, 45000, 20),
             new VehicleDTO("BMW", "X3", 2022, 55000, 30),
             new VehicleDTO("BMW", "X4", 2023, 65000, 40),
             new VehicleDTO("BMW", "X5", 2024, 75000, 50)
-    );
+    ));
 
     public ApiResponse addVehicle(@Valid VehicleDTO vehicleDTO) {
         try {

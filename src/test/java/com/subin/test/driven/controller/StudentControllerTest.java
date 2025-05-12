@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.subin.test.driven.model.entity.StudentEntity;
 import com.subin.test.driven.model.dto.StudentDTO;
 import com.subin.test.driven.repository.StudentRepository;
-import com.subin.test.driven.service.StudentService;
+import com.subin.test.driven.service.implementation.StudentService;
 import com.subin.test.driven.util.ApiResponse;
 import com.subin.test.driven.util.ResponseEntityUtil;
 import org.junit.jupiter.api.Test;

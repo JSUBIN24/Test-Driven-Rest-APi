@@ -1,8 +1,8 @@
 package com.subin.test.driven.controller;
 
 import com.subin.test.driven.model.dto.VehicleDTO;
-import com.subin.test.driven.service.InventoryService;
-import com.subin.test.driven.service.SearchService;
+import com.subin.test.driven.service.implementation.InventoryService;
+import com.subin.test.driven.service.implementation.SearchService;
 import com.subin.test.driven.util.ApiResponse;
 import com.subin.test.driven.util.ResponseEntityUtil;
 import jakarta.validation.Valid;
